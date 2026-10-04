@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم اللجنة الثقافية - رفقة بلاد الحرمين</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-right: 5px solid #c5a059;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #0b3c49;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .winner-box {
+            background: #f9f6ed;
+            border: 2px dashed #c5a059;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <img src="images/logo.png" alt="شعار">
+            <h1>لوحة تحكم اللجنة الثقافية والمسابقات</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="services.html">الرئيسية</a></li>
+            <li><a href="cultural.html">عرض القسم الثقافي</a></li>
+            <li><a href="admin-cultural.html" class="active">لوحة التحكم</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <!-- 1. إضافة وتعديل الأسئلة الثقافية -->
+        <div class="admin-section">
+            <h3 style="color: #0b3c49; margin-bottom: 15px;">✍️ إضافة سؤال ثقافي جديد (للتصحيح الآلي)</h3>
+            <form onsubmit="event.preventDefault(); alert('تم إضافة السؤال بنجاح وتحديثه في سيستم الحجاج!');">
+                <div class="form-group">
+                    <label>نص السؤال</label>
+                    <input type="text" placeholder="مثلاً: ما هو يوم الحج الأكبر؟" required>
+                </div>
+                <div class="form-group">
+                    <label>الخيارات (مفصولة بفاصلة أو اختيارات)</label>
+                    <input type="text" placeholder="يوم التروية، يوم عرفة، يوم النحر" required>
+                </div>
+                <div class="form-group">
+                    <label>الإجابة الصحيحة (للتصحيح الآلي)</label>
+                    <input type="text" placeholder="يوم النحر" required>
+                </div>
+                <button type="submit" class="btn">حفظ ونشر السؤال بالسستم</button>
+            </form>
+        </div>
+
+        <!-- 2. عملية القرعة والسحب الآلي -->
+        <div class="admin-section">
+            <h3 style="color: #0b3c49; margin-bottom: 15px;">🎲 إدارة القرعة والسحب اليومي</h3>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">اضغط على زر إجراء القرعة لاختيار فائز عشوائي من قاعدة بيانات الحجاج المشاركين وإرسال رسالة التهنئة.</p>
+            
+            <button class="btn btn-gold" onclick="triggerLuckyDraw()">🎯 إجراء القرعة والسحب الآلي الآن</button>
+
+            <div id="winnerDisplay" class="winner-box">
+                <h3 style="color: #c5a059; margin-bottom: 5px;">🎉 مبروك الفائز بالقرعة!</h3>
+                <p id="winnerName" style="font-size: 1.1rem; font-weight: bold; color: #0b3c49;"></p>
+                <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">تم إرسال رسالة مبروك والفوز بالجائزة إلى هاتفه الشخصي ولوحة تحكمه بنجاح.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const contestants = [
+            "عبدالله أحمد الزهراني - غرفة 102",
+            "فاطمة محمد العتيبي - غرفة 204",
+            "سارة خالد القحطاني - غرفة 310",
+            "عمر إبراهيم الدوسري - غرفة 115"
+        ];
+
+        function triggerLuckyDraw() {
+            const randomIndex = Math.floor(Math.random() * contestants.length);
+            const chosenWinner = contestants[randomIndex];
+            
+            const display = document.getElementById('winnerDisplay');
+            const nameParagraph = document.getElementById('winnerName');
+            
+            nameParagraph.innerText = chosenWinner;
+            display.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

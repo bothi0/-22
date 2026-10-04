@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>الثقافي والترفيهي</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo-area">
+
+            <img src="images/logo.png">
+
+            <div>
+                <h3>رفقة بلاد الحرمين</h3>
+
+                <span>
+                    Belad Alharamain Co. Hajj & Umrah L.C.C
+                </span>
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="services.html">
+                الخدمات
+            </a>
+
+            <a href="schedule.html">
+                الجدول
+            </a>
+
+            <a href="cultural.html"
+               class="active">
+                الثقافي والترفيهي
+            </a>
+
+            <a href="chat.html">
+                المحادثة
+            </a>
+
+            <a href="account.html">
+                ملفي
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main class="page-container">
+
+
+    <div class="page-heading">
+
+        <span>
+            شارك واستمتع
+        </span>
+
+        <h1>
+            القسم الثقافي والترفيهي
+        </h1>
+
+        <p>
+            اختبر معلوماتك وشارك في الأنشطة
+            وادخل السحب على الجوائز.
+        </p>
+
+    </div>
+
+
+
+    <div class="cultural-layout">
+
+
+        <!-- المسابقة -->
+
+        <section class="quiz-card">
+
+            <div class="quiz-title">
+
+                <span>
+                    مسابقة ثقافية
+                </span>
+
+                <h2>
+                    اختبر معلوماتك
+                </h2>
+
+            </div>
+
+
+
+            <form id="quizForm"
+                  data-correct="b,a,b">
+
+
+                <div class="question-box">
+
+                    <span>
+                        السؤال 1
+                    </span>
+
+                    <h3>
+                        ما الركن الذي يتم فيه الوقوف بعرفة؟
+                    </h3>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q1"
+                               value="a">
+
+                        الطواف
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q1"
+                               value="b">
+
+                        الوقوف بعرفة
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q1"
+                               value="c">
+
+                        السعي
+
+                    </label>
+
+                </div>
+
+
+
+                <div class="question-box">
+
+                    <span>
+                        السؤال 2
+                    </span>
+
+                    <h3>
+                        أين يقع المسجد الحرام؟
+                    </h3>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q2"
+                               value="a">
+
+                        مكة المكرمة
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q2"
+                               value="b">
+
+                        المدينة المنورة
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q2"
+                               value="c">
+
+                        جدة
+
+                    </label>
+
+                </div>
+
+
+
+                <div class="question-box">
+
+                    <span>
+                        السؤال 3
+                    </span>
+
+                    <h3>
+                        أين يوجد المسجد النبوي؟
+                    </h3>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q3"
+                               value="a">
+
+                        مكة المكرمة
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q3"
+                               value="b">
+
+                        المدينة المنورة
+
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="q3"
+                               value="c">
+
+                        الطائف
+
+                    </label>
+
+                </div>
+
+
+
+                <button class="main-button"
+                        type="submit">
+
+                    تصحيح الإجابات
+
+                </button>
+
+
+                <div id="quizResult"
+                     class="quiz-result">
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- القرعة -->
+
+        <section class="lottery-card">
+
+            <span>
+                🎁 سحب وقرعة
+            </span>
+
+            <h2>
+                هل أنت الفائز؟
+            </h2>
+
+            <p>
+                بعد المشاركة في المسابقة
+                يمكن الدخول في السحب.
+            </p>
+
+
+            <div class="lottery-number"
+                 id="drawNumber">
+
+                ---
+
+            </div>
+
+
+            <button id="drawBtn"
+                    class="gold-button">
+
+                ابدأ السحب
+
+            </button>
+
+
+            <div id="winnerMessage"
+                 class="winner-message">
+
+                <h2>
+                    🎉 مبروك!
+                </h2>
+
+                <p id="winnerName">
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

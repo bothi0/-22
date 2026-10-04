@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>قيود الحملة</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo-area">
+
+            <img src="images/logo.png">
+
+            <div>
+                <h3>رفقة بلاد الحرمين</h3>
+
+                <span>
+                    Belad Alharamain Co. Hajj & Umrah L.C.C
+                </span>
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="services.html">
+                الخدمات
+            </a>
+
+            <a href="schedule.html">
+                الجدول
+            </a>
+
+            <a href="cultural.html">
+                الثقافي والترفيهي
+            </a>
+
+            <a href="chat.html">
+                المحادثة
+            </a>
+
+            <a href="account.html">
+                ملفي
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main class="page-container">
+
+
+    <div class="page-heading">
+
+        <span>
+            الإدارة المالية
+        </span>
+
+        <h1>
+            قيود الحملة
+        </h1>
+
+        <p>
+            تسجيل المصروفات وإرفاق الفواتير
+            وترحيل القيود للنظام.
+        </p>
+
+    </div>
+
+
+
+    <div class="financial-cards">
+
+        <div>
+            <span>إجمالي القيود</span>
+            <strong id="expenseCount">
+                0
+            </strong>
+        </div>
+
+        <div>
+            <span>إجمالي المصروفات</span>
+            <strong id="expenseTotal">
+                0 ر.س
+            </strong>
+        </div>
+
+        <div>
+            <span>الفواتير</span>
+            <strong>
+                📎
+            </strong>
+        </div>
+
+    </div>
+
+
+
+    <button class="main-button"
+            onclick="openExpenseModal()">
+
+        + إضافة قيد جديد
+
+    </button>
+
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>البيان</th>
+
+                    <th>المبلغ</th>
+
+                    <th>التصنيف</th>
+
+                    <th>التاريخ</th>
+
+                    <th>الفاتورة</th>
+
+                    <th>الحالة</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="expensesTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- MODAL -->
+
+<div class="modal"
+     id="expenseModal">
+
+    <div class="modal-content">
+
+        <button class="close-modal"
+                onclick="closeExpenseModal()">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            إضافة قيد جديد
+        </h2>
+
+
+        <form id="expenseForm">
+
+
+            <label>
+                بيان المصروف
+            </label>
+
+            <input
+                type="text"
+                id="expenseDescription"
+                placeholder="مثال: شراء مستلزمات"
+                required
+            >
+
+
+
+            <label>
+                المبلغ
+            </label>
+
+            <input
+                type="number"
+                id="expenseAmount"
+                placeholder="0"
+                required
+            >
+
+
+
+            <label>
+                التصنيف
+            </label>
+
+            <select id="expenseCategory">
+
+                <option>
+                    مستلزمات
+                </option>
+
+                <option>
+                    نقل
+                </option>
+
+                <option>
+                    وجبات
+                </option>
+
+                <option>
+                    تشغيل
+                </option>
+
+                <option>
+                    أخرى
+                </option>
+
+            </select>
+
+
+
+            <label>
+                تصوير / رفع الفاتورة
+            </label>
+
+            <input
+                type="file"
+                id="receipt"
+                accept="image/*,.pdf"
+                capture="environment"
+            >
+
+
+            <div class="receipt-box">
+
+                📷
+
+                <br>
+
+                يمكنك تصوير الفاتورة
+                مباشرة من الجوال
+
+            </div>
+
+
+
+            <button class="main-button"
+                    type="submit">
+
+                حفظ القيد
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

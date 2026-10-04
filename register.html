@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد | رفقة بلاد الحرمين</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .auth-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .auth-card img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .auth-card h2 {
+            color: #0b3c29;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .auth-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #0b3c29;
+        }
+
+        .auth-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0b3c29;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .auth-button:hover {
+            background-color: #06281b;
+        }
+
+        .auth-links {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .auth-links a {
+            color: #0b3c29;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="auth-container">
+    <div class="auth-card">
+        <img src="images/logo.png" alt="شعار رفقة بلاد الحرمين">
+        <h2>إنشاء حساب جديد</h2>
+        <p>سجل بياناتك للانضمام إلى منصة رفقة بلاد الحرمين</p>
+
+        <!-- زر الانتقال الطبيعي لصفحة تسجيل الدخول -->
+        <form onsubmit="event.preventDefault(); window.location.href='account.html';">
+            <div class="form-group">
+                <label>الاسم الكامل</label>
+                <input type="text" placeholder="أدخل اسمك الكامل" required>
+            </div>
+
+            <div class="form-group">
+                <label>رقم الجوال</label>
+                <input type="tel" placeholder="05xxxxxxxx" required>
+            </div>
+
+            <div class="form-group">
+                <label>كلمة المرور</label>
+                <input type="password" placeholder="أدخل كلمة مرور قوية" required>
+            </div>
+
+            <button type="submit" class="auth-button">تسجيل الحساب</button>
+        </form>
+
+        <div class="auth-links">
+            لديك حساب بالفعل؟ <a href="account.html">تسجيل الدخول</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | رفقة بلاد الحرمين</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .login-logo {
+            width: 110px;
+            height: 110px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .login-logo img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        /* تنسيق قائمة اختيار نوع المستخدم المطابقة لقاعدة البيانات */
+        .input-with-icon select {
+            width: 100%;
+            padding: 14px 45px 14px 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            background-color: #fff;
+            appearance: none;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        .input-with-icon select:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+        }
+
+        .register-button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-top: 12px;
+            background-color: transparent;
+            color: #0d6efd;
+            border: 2px solid #0d6efd;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .register-button:hover {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="login-page">
+
+<div class="login-layout">
+
+    <!-- القسم الجانبي (الشعار والعنوان والألوان الأصلية) -->
+    <section class="login-brand">
+        <div class="login-logo">
+            <img src="images/logo.png" alt="شعار رفقة بلاد الحرمين">
+        </div>
+
+        <h1>رفقة بلاد الحرمين</h1>
+        <p>نرافق خطواتك لتؤدي مناسكك بطمأنينة</p>
+
+        <div class="login-feature">
+            <span>✓</span> خدماتك في مكان واحد
+        </div>
+        <div class="login-feature">
+            <span>✓</span> متابعة رحلتك لحظة بلحظة
+        </div>
+        <div class="login-feature">
+            <span>✓</span> تواصل مباشر ومساعدة مستمرة
+        </div>
+    </section>
+
+    <!-- قسم نموذج تسجيل الدخول -->
+    <section class="login-box">
+        <div class="login-heading">
+            <span>مرحبًا بعودتك</span>
+            <h2>تسجيل الدخول</h2>
+            <p>سجّل دخولك للوصول إلى بيانات جدول رحلتك وخدماتك.</p>
+        </div>
+
+        <form id="loginForm">
+            <!-- اختيار صفة المستخدم بناءً على جداول قاعدة البيانات (حاج، مشرف، حملة) -->
+            <label>تسجيل الدخول بصفة</label>
+            <div class="input-with-icon">
+                <span>👤</span>
+                <select id="userType" required>
+                    <option value="" disabled selected>اختر صفة المستخدم</option>
+                    <option value="hajj">حاج (رقم الهوية / الإقامة)</option>
+                    <option value="supervisor">مشرف (رقم الجوال / البريد)</option>
+                    <option value="campaign">إدارة الحملة</option>
+                </select>
+            </div>
+
+            <label>رقم الهوية / اسم المستخدم</label>
+            <div class="input-with-icon">
+                <span>🪪</span>
+                <input type="text" id="loginId" placeholder="أدخل رقم الهوية أو البريد الإلكتروني" required>
+            </div>
+
+            <label>كلمة المرور</label>
+            <div class="input-with-icon">
+                <span>🔒</span>
+                <input type="password" id="loginPassword" placeholder="أدخل كلمة المرور" required>
+            </div>
+
+            <div class="login-options">
+                <label class="remember">
+                    <input type="checkbox"> تذكرني
+                </label>
+                <a href="#">نسيت كلمة المرور؟</a>
+            </div>
+
+            <button type="submit" class="login-button">
+                تسجيل الدخول
+            </button>
+
+            <!-- زر إنشاء حساب جديد -->
+            <a href="register.html" class="register-button">
+                إنشاء حساب جديد
+            </a>
+        </form>
+
+        <div class="login-divider">
+            <span>دخول آمن</span>
+        </div>
+
+        <div class="secure-login">
+            <div>🔐</div>
+            <p>يتم التحقق من بيانات المستخدم المرتبطة بقاعدة البيانات قبل الوصول إلى الخدمات.</p>
+        </div>
+    </section>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
